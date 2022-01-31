@@ -1,28 +1,52 @@
-
-#include<bits/stdc++.h>
-#include<graphics.h>
+#include<string>
+#include<iostream>
 using namespace std;
 
+class laptop{
+	private:
+	string brand, model;
+	public:
+		laptop(){
+			brand = "lenovo";
+			model= "ideapad";
+		}
+		laptop(string brand, string model){
+			this->brand = brand;
+			this->model = model;
+		}
+		laptop(const laptop& l){
+			brand = l.brand;
+			model = l.model;
+		}
+		void set_info(){
+			cout<<"enter brand and model\n";
+			cin>>brand;
+			cin>>model;
+		}
+		void display(){
+			cout<<brand<<" "<<model<<" ";
+		}
+};
 
 
-int main()
-{int gd = DETECT, gm, errorcode;
-initgraph (&gd, &gm, NULL );
+int add(int a, int b , int c){
+	return a+b+c;
+}
+float add(float a, float b){
+	return a+b;
+}
+void fun ( int &a){ a=a+10;
 
-	int P[] = {150, 160, 80,125,125,130,150,160};
-	int T = 20;
-drawpoly(4, P);
-	setcolor (RED);
-	 for(int i=0;i<8;i++)
-	 	 {
-		 P[i] += T;
-	 }
+}
+int main(){
+	laptop l1;
+	l1.display();
+	laptop l2("acer ", "aspire");
+	l2.display();
 
-	 setcolor(RED);
-drawpoly(4, P);
-
-
-	delay(5000);
-	closegraph();
-	return 0;
+	laptop l3(l2);
+	l3.display();
+	//int a;
+	
+	//cout<<a<<endl;
 }
